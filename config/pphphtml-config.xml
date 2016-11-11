@@ -1,0 +1,5 @@
+<views>
+    <root ctrl="controller/index.ctrl.php" view="views/index.pphphtml" class="index_ctrl"/>
+    <head ctrl="controller/head.ctrl.php" view="views/head.pphphtml" class="head_ctrl"/>
+    <body ctrl="controller/body.ctrl.php" view="views/body.pphphtml" class="body_ctrl"/>
+</views>
