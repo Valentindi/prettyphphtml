@@ -8,15 +8,24 @@ class controller
     public function __construct($parent)
     {
         $this -> parent_ctrl = $parent;
+        $this -> child_ctrl = array();
     }
 
-
-    function get_html()
+    /**
+     * @param $tag
+     * @return HTML of this element
+     */
+    function get_html($tag)
     {
-        echo $this->render_html_from_tag("root");
+        echo $this->render_html_from_tag($tag);
     }
 
-    function render_html_from_tag($tag)
+    /**
+     * @param $tag
+     * @return renders html from special tag.
+     */
+
+    private function render_html_from_tag($tag)
     {
 
         $pphphtml_config = simplexml_load_file("config/pphphtml-config.xml");
@@ -42,6 +51,10 @@ class controller
         }
     }
 
+    /**
+     * @param $tag
+     * @return generated HTML of childs;
+     */
 
     private function get_child_html($tag)
     {
@@ -51,11 +64,29 @@ class controller
         if (file_exists($ctrl_path)) {
             require_once($ctrl_path);
             $class = $pphphtml_config->$tag['class'];
-            $child_ctrl = ctrl_classes::get_controller($tag);
+            $child_ctrl = ctrl_classes::get_controller($tag, $this);
             array_push($this -> child_ctrl, $child_ctrl);
             return $child_ctrl->render_html_from_tag($tag);
         }
 
 
     }
+
+    /**
+     * @return array[ctrl] children_ctrls;
+     */
+    public function getChildCtrl(): array
+    {
+        return $this->child_ctrl;
+    }
+
+    /**
+     * @return ctrl parent_ctrls();
+     */
+    public function getParentCtrl()
+    {
+        return $this->parent_ctrl;
+    }
+
+
 }

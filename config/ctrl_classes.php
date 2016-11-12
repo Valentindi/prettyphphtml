@@ -1,7 +1,7 @@
 <?php
 
 class ctrl_classes {
-    static function get_controller($tag){
+    static function get_controller($tag, $parent){
 
 
         $pphphtml_config = simplexml_load_file("config/pphphtml-config.xml");
@@ -12,9 +12,9 @@ class ctrl_classes {
 
         include_once ($ctrl_path);
         switch ($tag){
-            case "index": return new index_ctrl(); break;
-            case "head": return new head_ctrl(); break;
-            case "body": return new body_ctrl(); break;
+            case "index": return new index_ctrl($parent); break;
+            case "head": return new head_ctrl($parent); break;
+            case "body": return new body_ctrl($parent); break;
         }
         return new ctrl();
 
