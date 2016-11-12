@@ -5,6 +5,11 @@ include_once("config/ctrl_classes.php");
 
 class controller
 {
+    public function __construct($parent)
+    {
+        $this -> parent_ctrl = $parent;
+    }
+
 
     function get_html()
     {
@@ -47,6 +52,7 @@ class controller
             require_once($ctrl_path);
             $class = $pphphtml_config->$tag['class'];
             $child_ctrl = ctrl_classes::get_controller($tag);
+            array_push($this -> child_ctrl, $child_ctrl);
             return $child_ctrl->render_html_from_tag($tag);
         }
 
