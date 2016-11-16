@@ -6,7 +6,7 @@ class pphphtml {
     }
 
     public function get_tags(){
-        $temp_tags = explode("}}", $this -> raw_pphphtml);
+        $temp_tags = explode("}}", strip_tags($this -> raw_pphphtml));
         $tags = null;
         for ($i = 0; $i < sizeof($temp_tags) -1; $i++){
             $tags[$i] = preg_replace('/\s+/', '', trim(str_replace("{{", '', $temp_tags[$i])));
