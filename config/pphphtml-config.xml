@@ -1,7 +1,9 @@
 <views>
 
-    <headbar ctrl="modules/headbar/headbar.ctrl.php" view="modules/headbar/headbar.pphphtml" class="headbar_ctrl"/>
     <root ctrl="controller/index.ctrl.php" view="views/index.pphphtml" class="index_ctrl"/>
     <head ctrl="controller/head.ctrl.php" view="views/head.pphphtml" class="head_ctrl"/>
     <body ctrl="controller/body.ctrl.php" view="views/body.pphphtml" class="body_ctrl"/>
+    <signupform ctrl="modules/login/controller/signupform.ctrl.php" view="modules/login/views/signupform.pphphtml" class="signupform_ctrl"/>
+    <signup ctrl="modules/login/controller/signup.ctrl.php" view="modules/login/views/signup.pphphtml" class="signup_ctrl"/>
+    <headbar ctrl="modules/login/controller/headbar.ctrl.php" view="modules/login/views/headbar.pphphtml" class="headbar_ctrl"/>
 </views>

@@ -17,6 +17,8 @@ class ctrl_classes {
             case "head": return new head_ctrl($parent); break;
             case "body": return new body_ctrl($parent); break;
             case "headbar": return new headbar_ctrl($parent); break;
+            case "signupform": return new signupform_ctrl($parent); break;
+            case "signup": return new signup_ctrl($parent); break;
         }
         return new ctrl();
 
