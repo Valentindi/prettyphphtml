@@ -3,7 +3,7 @@
 include_once("models/pphphtml.php");
 include_once("config/ctrl_classes.php");
 
-class controller
+class view_controller
 {
     public function __construct($parent)
     {
@@ -66,7 +66,7 @@ class controller
         if (file_exists($ctrl_path)) {
 
             require_once($ctrl_path);
-            $child_ctrl = ctrl_classes::get_controller($tag, $this);
+            $child_ctrl = ctrl_classes::get_view_controller($tag, $this);
             array_push($this -> child_ctrl, $child_ctrl);
             return $child_ctrl->get_html($tag);
         }

@@ -1,14 +1,14 @@
 <?php
 
 class ctrl_classes {
-    static function get_controller($tag, $parent){
+    static function get_view_controller($tag, $parent){
 
 
         $pphphtml_config = simplexml_load_file("config/pphphtml-config.xml");
         $ctrl_path = $_SERVER["DOCUMENT_ROOT"] . "/" .$pphphtml_config->$tag['ctrl'];
 
         if (!file_exists($ctrl_path)) {
-            return new Error("Controller not found");
+            return new Error("view_controller not found");
         }
 
         include_once ($ctrl_path);

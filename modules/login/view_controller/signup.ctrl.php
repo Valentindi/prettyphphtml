@@ -1,10 +1,10 @@
 <?php
 
 
-include_once("controller/ctrl.php");
+include_once("view_controller/ctrl.php");
 
 
-class signup_ctrl extends controller {
+class signup_ctrl extends view_controller {
     public function __construct()
     {
         $this -> child_ctrl = array();

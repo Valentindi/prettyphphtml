@@ -2,10 +2,10 @@
 <?php
 
 
-include_once("controller/ctrl.php");
+include_once("view_controller/ctrl.php");
 
 
-class headbar_ctrl extends controller {
+class headbar_ctrl extends view_controller {
     function get_html($tag)
     {
 
