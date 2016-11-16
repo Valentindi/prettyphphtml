@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <config>
-    <host>hostname</host>
-    <user>username</user>
-    <password>passwort</password>
-    <tablename>tablename</tablename>
+    <msysqli>
+        <host>hostname</host>
+        <user>username</user>
+        <password>passwort</password>
+        <tablename>tablename</tablename>
+    </msysqli>
 </config>
